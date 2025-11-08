@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: linear-gradient(135deg, #f9fafb 0%, #eff6ff 50%, #faf5ff 100%);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  font-feature-settings: "rlig" 1, "calt" 1;
+  min-height: 100vh;
+}
+
+@layer utilities {
+  .glass-card {
+    @apply backdrop-blur-lg bg-white/80 border border-gray-200/50 shadow-xl;
+  }
+  .gradient-teal {
+    @apply bg-gradient-to-r from-teal-500 to-cyan-600;
+  }
+  .gradient-purple {
+    @apply bg-gradient-to-r from-purple-500 to-pink-600;
+  }
+  .gradient-success {
+    @apply bg-gradient-to-r from-green-500 to-emerald-600;
+  }
+  .gradient-danger {
+    @apply bg-gradient-to-r from-red-500 to-rose-600;
+  }
+}
